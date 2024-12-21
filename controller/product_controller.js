@@ -2,23 +2,21 @@ const Product = require("../models/product_schema");
 
 
 const createProduct = async (req, res) => {
-    // Log request body and file to check if they are being received correctly
     console.log('Request Body:', req.body);
     console.log('Uploaded File:', req.file);
 
     if (req.file) {
-        req.body.img = req.file.path; // Save the file path
+        req.body.img = req.file.path;
     }
 
-    req.body.user = req.user.id; // Assuming user authentication is set
+    req.body.user = req.user.id;
 
     try {
-        // Create product in database
         let product = await Product.create(req.body);
-        res.status(201).send(product); // Respond with the created product
+        res.status(201).send(product);
     } catch (error) {
         console.error('Error while creating product:', error);
-        res.status(500).send({ error: error.message }); // Send a detailed error message
+        res.status(500).send({ error: error.message });
     }
 };
 
