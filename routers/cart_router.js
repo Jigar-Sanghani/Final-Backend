@@ -1,7 +1,7 @@
 
 const { Router } = require("express");
-const { decode } = require("../middlewares/decodeJwt");
 const { getCartByUserId, addToCart, removeFromCart, removeQuantity, addQuantity } = require("../controller/cart_controller");
+const { decode } = require("../middlewares/decodejwt");
 const cartRoute = Router();
 
 cartRoute.get("/", decode, getCartByUserId);
