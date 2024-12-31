@@ -13,7 +13,7 @@ const userschema = new mongoose.Schema({
     profile: { type: String },
     number: { type: Number },
     isActive: { type: Boolean, default: true },
-    isVerified: { type: Boolean, default: false }
+    isVerified: { type: Boolean, default: true }
 
 })
 

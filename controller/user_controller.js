@@ -19,6 +19,7 @@ const Signup = async (req, res) => {
             let data = {
                 email: user.email,
                 id: user.id,
+                number:user.number,
                 role: user.role,
                 username: user.username,
                 isActive: user.isActive
@@ -69,6 +70,7 @@ const Login = async (req, res) => {
         let data = {
             email: user.email,
             id: user.id,
+            number:user.number,
             role: user.role,
             username: user.username,
             isActive: user.isActive
